@@ -2,75 +2,73 @@
 
 ## Keep projects separate
 
-- **Tracker** — `CFB27TRACKER` repo / CFB27 Tracker app only
-- **Mods** — `Desktop\CFB27-Mods` — [Velossity/CFB27-MODS](https://github.com/Velossity/CFB27-MODS) — one subfolder per mod
+| Project | Where | Purpose |
+|---------|-------|---------|
+| **Tracker** | `CFB27TRACKER` / CFB TRACKER app | Dynasty tracking only |
+| **Frosty / MMC mods** | This repo (`CFB27-Mods` / `CFB27-MODS`) | `.fbmod` packs for MMC Mod Manager |
+| **Team Builder** | `Desktop\Teambuilder Stuff` + in-game | Official custom programs |
 
-Open `Desktop\CFB27-Mods` in Cursor for modding work. Open the tracker project separately for dynasty app work.
+Open this mods repo in Cursor for Frosty work. Open the tracker separately for the dynasty app.
+
+## Day-to-day Frosty workflow
+
+1. Browse the mods repo → open a **mod folder**
+2. Open that folder’s **`mods\`** directory
+3. In **MMC Mod Manager** (Admin): **Add Mod** → pick the `.fbmod` → enable → **Apply** → **Launch**
+
+Full setup: [frosty-mmc.md](frosty-mmc.md)
 
 ## Desktop layout
 
 ```
-Desktop\CFB27-Mods\
-  _template\
-  my-mod-a\
-  my-mod-b\
-  tools\
-  assets\
-  docs\
+Desktop\
+  CFB27-Mods\
+    CFB27-MODS\          ← repo (until you flatten)
+      _template\
+      example-frosty-mod\
+      my-mod-a\
+        mods\            ← import these into MMC
+      tools\
+      docs\
+  MMC_Modding_Tools_v1.1.0.0\
+  Teambuilder Stuff\
+  CFB TRACKER\           ← separate project
 ```
-
-Every CFB27 mod you build gets its own folder. Shared tools and docs stay at the root.
 
 ## What you can mod today
 
-### Team Builder (official)
+### Frosty / MMC (primary for this repo)
 
-EA's Team Builder lets you create custom programs with logos, uniforms, stadiums, and rosters. Flow:
+- **Play:** MMC Mod Manager + `.fbmod` from each mod’s `mods\` folder
+- **Create:** MMC Editor → export `.fbmod` → drop into `your-mod\mods\`
+- One-time anti-cheat launcher swap required — see [frosty-mmc.md](frosty-mmc.md)
+
+### Team Builder (official — separate from Frosty)
 
 1. Create on the Team Builder website
 2. Download from **Download Center** inside CFB27
 3. Use in Dynasty or other modes
 
-Good for: fictional schools, alternate uniforms, full custom programs.
+Keep Team Builder assets in `Desktop\Teambuilder Stuff`, not mixed into Frosty `mods\` folders unless you document why.
 
 ### Save files (research / backup)
-
-Saves live under:
 
 ```
 Documents\College Football 27\Saves\
 ```
 
-Extensions seen: `.sav`, `.bin`, `.mc02`
+The `save-inspector` tool can list metadata and extract readable strings. It does **not** decrypt or patch saves. Always back up first.
 
-Saves appear **encrypted**. The `save-inspector` tool in this repo can:
+## Suggested first steps
 
-- List save files and metadata (size, modified date)
-- Dump header bytes
-- Extract readable ASCII/UTF-16 strings (school names, years, etc.)
-
-It does **not** decrypt or patch saves yet. Always copy saves to a backup folder before experiments.
-
-### Visual / roster mods (community)
-
-PC release enabled a modding scene, but public tooling is still catching up. Typical workflow emerging:
-
-1. Document target files and formats
-2. Build or adopt extraction/packing tools
-3. Ship mods as versioned folders with install instructions
-4. Test only on offline saves
-
-Use `_template` or `scripts\new-mod.ps1` when starting a new project.
-
-## Suggested first experiments
-
-1. **Save inspector** — run on your dynasty save, note what strings appear
-2. **Custom team** — build one Team Builder school and document the export/import steps
-3. **Asset pack** — collect logos/uniform references under `assets/` for a future mod
-4. **Throwback roster mod** — run `new-mod.ps1 -Name "2007-throwback"` and plan roster + branding there
+1. Finish MMC one-time setup ([frosty-mmc.md](frosty-mmc.md))
+2. Open `example-frosty-mod\` to see the expected folder layout
+3. Run `scripts\new-mod.ps1 -Name "my-first-mod"` and drop a `.fbmod` into `mods\`
+4. Import via MMC Mod Manager and test **offline**
 
 ## Safety
 
-- Back up saves and game folders before installing anything
+- Back up saves and the stock anti-cheat launcher before installing tools
 - Prefer offline dynasty for testing
-- Never commit real `.sav` files to git (`.gitignore` blocks them)
+- Never use mods online
+- Never commit real `.sav` files (`.gitignore` blocks them)

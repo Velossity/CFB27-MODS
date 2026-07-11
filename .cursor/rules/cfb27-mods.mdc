@@ -1,17 +1,27 @@
 ---
-description: CFB27 modding — Desktop CFB27-Mods, one folder per mod
+description: CFB27 Frosty/MMC mods — one folder per mod, mods\ for .fbmod import
 alwaysApply: true
 ---
 
 # CFB27-Mods workspace
 
-Local root: **`Desktop\CFB27-Mods`** (git repo). **Not** the CFB27 Tracker.
+Git root may be nested: **`Desktop\CFB27-Mods\CFB27-MODS`**. Prefer opening that repo root. **Not** the CFB27 Tracker.
+
+## Day-to-day (Frosty MMC)
+
+1. Browse repo → open a **mod folder**
+2. Frosty-ready files are in that mod’s **`mods\`** folder (`.fbmod`)
+3. User installs via **MMC Mod Manager** → **Add Mod** → select `.fbmod` → Apply → Launch
+
+Tools live under `Desktop\MMC_Modding_Tools_v1.1.0.0\` (Manager + Editor). Guide: `docs/frosty-mmc.md`.
 
 ## Structure
 
-- **One folder = one mod** at repo root (e.g. `2007-throwback\`, `custom-unis\`)
+- **One folder = one mod** at repo root
+- Inside each mod: `mods\` (import), `source\` (Editor WIP), `assets\` (mod-only art), `README.md`
 - **Shared only at root:** `tools\`, `assets\`, `docs\`, `scripts\`, `_template\`
 - Never put tracker app code here
+- Team Builder assets stay in `Desktop\Teambuilder Stuff` (not Frosty `.fbmod`)
 
 ## New mod
 
@@ -21,11 +31,14 @@ powershell -ExecutionPolicy Bypass -File scripts\new-mod.ps1 -Name "mod-name"
 
 ## Rules
 
-- Back up saves before experiments; never commit `.sav` files
-- Mod-specific files stay inside that mod's folder
+- Back up saves; never commit `.sav` files
+- Put finished `.fbmod` in `mods\` so the browse → open mod → import path stays obvious
+- Mod-specific files stay inside that mod’s folder
 - Tracker changes belong in `CFB27TRACKER` only
+- Do not use mods online
 
 ## Paths
 
 - Saves: `%USERPROFILE%\Documents\College Football 27\Saves\`
-- This workspace: `%USERPROFILE%\Desktop\CFB27-Mods\`
+- This workspace: `%USERPROFILE%\Desktop\CFB27-Mods\CFB27-MODS\` (or flattened `Desktop\CFB27-Mods\`)
+- MMC Manager: `%USERPROFILE%\Desktop\MMC_Modding_Tools_v1.1.0.0\MMC_ModManager_v1.1.0.0\`

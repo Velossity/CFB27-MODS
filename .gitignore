@@ -17,3 +17,7 @@ Thumbs.db
 # Tool output
 tools/**/output/
 tools/**/reports/
+
+# Frosty / MMC local caches (never commit)
+**/Caches/
+*.fbproject.bak
