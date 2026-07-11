@@ -1,0 +1,18 @@
+CFB27-Mods — how to use
+=======================
+
+1. Open a MOD FOLDER (example: example-frosty-mod)
+2. Open the "mods" folder inside it
+3. Double-click "Open MMC Mod Manager" in this folder (run as Administrator)
+4. In MMC: Add Mod -> pick the .fbmod from that mods folder
+5. Enable the mod -> Apply -> Launch
+
+Folders that are NOT mods (ignore when browsing):
+  _template   = blank starter for new mods
+  _Shared     = docs, tools, scripts (not for MMC)
+  Open MMC Mod Manager.lnk = shortcut to the tool
+
+Create a new mod folder (PowerShell):
+  powershell -ExecutionPolicy Bypass -File "_Shared\scripts\new-mod.ps1" -Name "my-mod-name"
+
+Offline / dynasty only. Do not use mods online.

@@ -27,10 +27,10 @@ Community: [CFMC Discord](https://discord.gg/cfmc) · [MMC Discord](https://disc
    C:\Program Files\EA Games\EA SPORTS College Football 27\
    ```
 
-   or Steam:
+   or Steam (this PC):
 
    ```
-   C:\Program Files (x86)\Steam\steamapps\common\EA SPORTS College Football 27\
+   C:\Program Files (x86)\Steam\steamapps\common\College Football 27\
    ```
 
 3. Rename the stock launcher:
@@ -55,7 +55,7 @@ Community: [CFMC Discord](https://discord.gg/cfmc) · [MMC Discord](https://disc
 
 ## Day-to-day: add a mod from this workspace
 
-1. Open **this mods repo** (browse path may be `Desktop\CFB27-Mods\CFB27-MODS`).
+1. Open **`Desktop\CFB27-Mods`** → open the mod folder you want.
 2. Open the **mod folder** you want (e.g. `example-frosty-mod`).
 3. Open its **`mods\`** subfolder — that is where Frosty-ready files live (`.fbmod`).
 4. Launch **MMC Mod Manager** as Admin.

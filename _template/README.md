@@ -1,6 +1,6 @@
 # Mod template (Frosty / MMC)
 
-Copy this folder (or run `scripts\new-mod.ps1`) and fill in the sections below.
+Copy this folder (or run `_Shared\scripts\new-mod.ps1`) and fill in the sections below.
 
 ## Mod name
 
@@ -37,7 +37,7 @@ your-mod-name\
 5. Select the `.fbmod` file(s)
 6. Enable the mod in the list → **Apply** → **Launch**
 
-See repo guide: [docs/frosty-mmc.md](../docs/frosty-mmc.md)
+See repo guide: [_Shared/docs/frosty-mmc.md](../_Shared/docs/frosty-mmc.md)
 
 ## Uninstall
 

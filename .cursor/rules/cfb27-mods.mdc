@@ -1,44 +1,35 @@
 ---
-description: CFB27 Frosty/MMC mods — one folder per mod, mods\ for .fbmod import
+description: CFB27 Frosty/MMC mods — Desktop CFB27-Mods, one folder per mod
 alwaysApply: true
 ---
 
 # CFB27-Mods workspace
 
-Git root may be nested: **`Desktop\CFB27-Mods\CFB27-MODS`**. Prefer opening that repo root. **Not** the CFB27 Tracker.
+Local root: **`Desktop\CFB27-Mods`**. **Not** the CFB27 Tracker.
 
 ## Day-to-day (Frosty MMC)
 
-1. Browse repo → open a **mod folder**
+1. Open `Desktop\CFB27-Mods` → open a **mod folder** (not `_Shared` / `_template`)
 2. Frosty-ready files are in that mod’s **`mods\`** folder (`.fbmod`)
-3. User installs via **MMC Mod Manager** → **Add Mod** → select `.fbmod` → Apply → Launch
-
-Tools live under `Desktop\MMC_Modding_Tools_v1.1.0.0\` (Manager + Editor). Guide: `docs/frosty-mmc.md`.
+3. Use **Open MMC Mod Manager.lnk** or MMC Mod Manager → **Add Mod** → Apply → Launch
 
 ## Structure
 
-- **One folder = one mod** at repo root
-- Inside each mod: `mods\` (import), `source\` (Editor WIP), `assets\` (mod-only art), `README.md`
-- **Shared only at root:** `tools\`, `assets\`, `docs\`, `scripts\`, `_template\`
+- **Mod folders at repo root** — one folder per mod
+- Inside each mod: `mods\` (import), `source\` (Editor WIP), `assets\`, `README.md`
+- **Shared workspace:** `_Shared\docs`, `_Shared\scripts`, `_Shared\tools`, `_Shared\assets`
+- **`_template\`** — starter only; not for MMC import
 - Never put tracker app code here
-- Team Builder assets stay in `Desktop\Teambuilder Stuff` (not Frosty `.fbmod`)
 
 ## New mod
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File scripts\new-mod.ps1 -Name "mod-name"
+cd $env:USERPROFILE\Desktop\CFB27-Mods
+powershell -ExecutionPolicy Bypass -File _Shared\scripts\new-mod.ps1 -Name "mod-name"
 ```
-
-## Rules
-
-- Back up saves; never commit `.sav` files
-- Put finished `.fbmod` in `mods\` so the browse → open mod → import path stays obvious
-- Mod-specific files stay inside that mod’s folder
-- Tracker changes belong in `CFB27TRACKER` only
-- Do not use mods online
 
 ## Paths
 
-- Saves: `%USERPROFILE%\Documents\College Football 27\Saves\`
-- This workspace: `%USERPROFILE%\Desktop\CFB27-Mods\CFB27-MODS\` (or flattened `Desktop\CFB27-Mods\`)
+- This workspace: `%USERPROFILE%\Desktop\CFB27-Mods\`
 - MMC Manager: `%USERPROFILE%\Desktop\MMC_Modding_Tools_v1.1.0.0\MMC_ModManager_v1.1.0.0\`
+- Saves: `%USERPROFILE%\Documents\College Football 27\Saves\`

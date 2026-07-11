@@ -15,8 +15,12 @@ Thumbs.db
 *.mc02
 
 # Tool output
-tools/**/output/
-tools/**/reports/
+_Shared/tools/**/output/
+_Shared/tools/**/reports/
+
+# Local shortcut (recreate if missing — points at Desktop MMC install)
+# Keep tracked for this machine; ignore if you prefer:
+# *.lnk
 
 # Frosty / MMC local caches (never commit)
 **/Caches/

@@ -4,7 +4,8 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
-$root = Split-Path -Parent $PSScriptRoot
+# scripts live in _Shared\scripts — repo root is two levels up
+$root = Split-Path -Parent (Split-Path -Parent $PSScriptRoot)
 $template = Join-Path $root '_template'
 $dest = Join-Path $root $Name
 
@@ -16,11 +17,15 @@ if (Test-Path $dest) {
     Write-Error "Mod folder already exists: $dest"
 }
 
+$reserved = @('_Shared', '_template', '.cursor', '.git')
+if ($reserved -contains $Name) {
+    Write-Error "That name is reserved for workspace folders."
+}
+
 Copy-Item -Path $template -Destination $dest -Recurse
 $readme = Join-Path $dest 'README.md'
 (Get-Content $readme -Raw) -replace 'your-mod-name', $Name | Set-Content $readme -NoNewline
 
-# Ensure Frosty MMC folders exist even if template copy missed empties
 foreach ($sub in @('mods', 'source', 'assets')) {
     $dir = Join-Path $dest $sub
     if (-not (Test-Path $dir)) {
@@ -30,5 +35,5 @@ foreach ($sub in @('mods', 'source', 'assets')) {
 
 Write-Host "Created mod folder: $dest"
 Write-Host "Put finished .fbmod files in: $(Join-Path $dest 'mods')"
-Write-Host "Then in MMC Mod Manager: Add Mod -> select the .fbmod -> Apply -> Launch"
+Write-Host "Then double-click 'Open MMC Mod Manager' in CFB27-Mods -> Add Mod -> Apply -> Launch"
 Write-Host "Edit README.md with install notes for this mod."

@@ -1,6 +1,6 @@
 ﻿# Example Frosty MMC mod (empty sample)
 
-This folder shows the layout every Frosty/MMC mod in this workspace should follow. It has **no** real `.fbmod` yet — copy it or run `scripts\new-mod.ps1` for a real project.
+This folder shows the layout every Frosty/MMC mod in this workspace should follow. It has **no** real `.fbmod` yet — copy it or run `_Shared\scripts\new-mod.ps1` for a real project.
 
 ## Layout
 
@@ -19,7 +19,7 @@ example-frosty-mod\
 3. **Add Mod** → browse to this folder’s `mods\` directory
 4. Select the `.fbmod` → enable → **Apply** → **Launch**
 
-Full guide: [docs/frosty-mmc.md](../docs/frosty-mmc.md)
+Full guide: [_Shared/docs/frosty-mmc.md](../_Shared/docs/frosty-mmc.md)
 
 ## Type
 
