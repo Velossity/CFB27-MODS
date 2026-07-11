@@ -1,0 +1,11 @@
+{
+  "name": "cfb27-mods",
+  "version": "0.1.0",
+  "private": true,
+  "description": "CFB27 modding workspace — tools, assets, and mod projects",
+  "license": "MIT",
+  "scripts": {
+    "inspect-save": "node tools/save-inspector/cli.js",
+    "scan-saves": "node tools/save-inspector/cli.js --scan"
+  }
+}

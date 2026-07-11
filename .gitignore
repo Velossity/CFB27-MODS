@@ -1,0 +1,19 @@
+node_modules/
+dist/
+build/
+*.log
+.env
+.env.*
+.DS_Store
+Thumbs.db
+
+# Local game copies — never commit real saves or install folders
+**/saves/
+**/game-files/
+*.sav
+*.bin
+*.mc02
+
+# Tool output
+tools/**/output/
+tools/**/reports/

@@ -1,0 +1,31 @@
+---
+description: CFB27 modding — Desktop CFB27-Mods, one folder per mod
+alwaysApply: true
+---
+
+# CFB27-Mods workspace
+
+Local root: **`Desktop\CFB27-Mods`** (git repo). **Not** the CFB27 Tracker.
+
+## Structure
+
+- **One folder = one mod** at repo root (e.g. `2007-throwback\`, `custom-unis\`)
+- **Shared only at root:** `tools\`, `assets\`, `docs\`, `scripts\`, `_template\`
+- Never put tracker app code here
+
+## New mod
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\new-mod.ps1 -Name "mod-name"
+```
+
+## Rules
+
+- Back up saves before experiments; never commit `.sav` files
+- Mod-specific files stay inside that mod's folder
+- Tracker changes belong in `CFB27TRACKER` only
+
+## Paths
+
+- Saves: `%USERPROFILE%\Documents\College Football 27\Saves\`
+- This workspace: `%USERPROFILE%\Desktop\CFB27-Mods\`
