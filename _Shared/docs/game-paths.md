@@ -1,16 +1,8 @@
 # CFB27 game paths (Windows)
 
-Reference paths for Frosty MMC modding and tooling. Adjust username as needed.
+Reference paths for Frosty MMC modding and tooling.
 
 ## This mods workspace
-
-Nested clone (current on some PCs):
-
-```
-%USERPROFILE%\Desktop\CFB27-Mods\CFB27-MODS\
-```
-
-Preferred after flatten / clean clone:
 
 ```
 %USERPROFILE%\Desktop\CFB27-Mods\
@@ -22,6 +14,14 @@ Each mod’s importable files:
 ...\your-mod-name\mods\*.fbmod
 ```
 
+Shared docs/tools:
+
+```
+...\CFB27-Mods\_Shared\docs\
+...\CFB27-Mods\_Shared\tools\
+...\CFB27-Mods\_Shared\scripts\
+```
+
 ## MMC / Frosty tools (Desktop)
 
 ```
@@ -31,18 +31,20 @@ Each mod’s importable files:
   AC_(PUT IN CFB27 or M27 FOLDER)\EAAntiCheat.GameServiceLauncher.exe
 ```
 
+Shortcut from the mods folder: `Open MMC Mod Manager.lnk`
+
 ## Game install
+
+Steam (this PC):
+
+```
+C:\Program Files (x86)\Steam\steamapps\common\College Football 27\
+```
 
 EA Games (typical):
 
 ```
 C:\Program Files\EA Games\EA SPORTS College Football 27\
-```
-
-Steam (typical):
-
-```
-C:\Program Files (x86)\Steam\steamapps\common\EA SPORTS College Football 27\
 ```
 
 Launcher to rename during mod setup: `EAAntiCheat.GameServiceLauncher.exe`
@@ -53,15 +55,10 @@ Launcher to rename during mod setup: `EAAntiCheat.GameServiceLauncher.exe`
 %USERPROFILE%\Documents\College Football 27\Saves\
 ```
 
-Common extensions: `.sav`, `.bin`, `.mc02`
-
 ## Tracker (separate — do not use for mods)
 
 ```
 %USERPROFILE%\Documents\CFB27 Tracker\
-  Dynasties\
-  Logos\
-  Saves\
 ```
 
 App / repo: Desktop `CFB TRACKER` / GitHub `Velossity/CFB27TRACKER`
@@ -71,16 +68,3 @@ App / repo: Desktop `CFB TRACKER` / GitHub `Velossity/CFB27TRACKER`
 ```
 %USERPROFILE%\Desktop\Teambuilder Stuff\
 ```
-
-## Backups
-
-Recommended local layout (gitignored):
-
-```
-CFB27-MODS/
-  game-files/          # optional local mirror — never commit
-    saves-backup/
-    extracted/
-```
-
-Copy saves here before experimental tools or new mod packs.

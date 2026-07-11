@@ -5,7 +5,7 @@
   "description": "CFB27 modding workspace — tools, assets, and mod projects",
   "license": "MIT",
   "scripts": {
-    "inspect-save": "node tools/save-inspector/cli.js",
-    "scan-saves": "node tools/save-inspector/cli.js --scan"
+    "inspect-save": "node _Shared/tools/save-inspector/cli.js",
+    "scan-saves": "node _Shared/tools/save-inspector/cli.js --scan"
   }
 }
